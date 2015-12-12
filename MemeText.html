@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title> Meme Text </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas id="c" width="250" height="250"></canvas>
+
+        <script>
+            var c = document.querySelector( "#c" );
+            var ctx = c.getContext( "2d" );
+
+            ctx.font = '36pt Impact';
+            ctx.textAlign = "center";
+
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 3;
+            ctx.strokeText( "MEME TEXT!", c.width / 2, 40 );
+        </script>
+    </body>
+</html>
+
