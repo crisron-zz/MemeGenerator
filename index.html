@@ -3,15 +3,17 @@
 <html>
     <head>
         <title> Meme Generator </title>
-        <meta charset="utf-8" >
+        <meta charset="utf-8">
     </head>
     <body>
-        <canvas id="c" width="200" height="200"></canvas>
+        <!-- <canvas id="c" width="200" height="200"></canvas> -->
+        <canvas id="c" width="500" height="500"></canvas>
 
         <script>
             var c = document.querySelector( "#c" );
             var ctx = c.getContext( "2d" );
 
+            /*
             var image = new Image();
             image.onload = function() {
                 console.log( "loaded image" );
@@ -21,6 +23,18 @@
             }
 
             image.src = "images/saurabh.jpg";
+            */
+            ctx.fillRect( 100, 100, 100, 100 );
+            ctx.strokeRect( 50, 50, 50, 50 );
+
+            // We are about to draw a new shape
+            ctx.beginPath();
+            ctx.moveTo( 10, 10 );
+            ctx.lineTo( 50, 50 );
+            ctx.lineTo( 50, 10 );
+            ctx.lineTo( 10, 10 );
+            // ctx.fill();
+            ctx.stroke();
         </script>
     </body>
 </html>
