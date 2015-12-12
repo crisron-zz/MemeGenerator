@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title> Image Data </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas id="c" width="500" height="500"></canvas>
+
+        <script>
+            var c = document.querySelector( "#c" );
+            var ctx = c.getContext( "2d" );
+
+            ctx.fillStyle = "red";
+            ctx.fillRect( 10, 10, 50, 50 );
+            var imgData = ctx.getImageData( 10, 10, 50, 50 );
+            // Changing every 10th pixel to solid green color
+            console.log( imgData.data.length );
+            for( var i = 36; i < imgData.data.length; i += 40 ) {
+                imgData.data[ i ] = 0;
+                imgData.data[ i + 1 ] = 255;
+                imgData.data[ i + 2 ] = 0;
+                imgData.data[ i + 3 ] = 255;
+            }
+            ctx.putImageData( imgData, 10, 10 );
+        </script>
+    </body>
+</html>
+
