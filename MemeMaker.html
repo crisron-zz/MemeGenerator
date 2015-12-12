@@ -46,28 +46,32 @@
                 var canvas = document.querySelector( 'canvas' );
                 var ctx = canvas.getContext( "2d" );
 
-                // Draw image on the canvas
-                ctx.drawImage( image, 0, 0, canvas.width, canvas.height );
+                if( image ) {
+                    // Draw image on the canvas
+                    ctx.drawImage( image, 0, 0, canvas.width, canvas.height );
+                }
 
                 if( topLine || bottomLine ) {
                     // Set common properties for text
                     ctx.strokeStyle = "black";
                     ctx.fillStyle = "white";
-                    ctx.font = '36pt Impact';
+                    ctx.font = '30pt Impact';
                     ctx.textAlign = "center";
                     ctx.lineWidth = 3;
+                } else {
+                    return;
                 }
 
                 if( topLine ) {
                     // Draw top text
-                    ctx.strokeText( topLine, canvas.width/2, 50 );
-                    ctx.fillText( topLine, canvas.width/2, 50 );
+                    ctx.strokeText( topLine, canvas.width/2, 40 );
+                    ctx.fillText( topLine, canvas.width/2, 40 );
                 }
 
                 if( bottomLine ) {
                     // Draw bottom text
-                    ctx.strokeText( bottomLine, canvas.width/2, canvas.height - 8 );
-                    ctx.fillText( bottomLine, canvas.width/2, canvas.height - 8 );
+                    ctx.strokeText( bottomLine, canvas.width/2, canvas.height - 20 );
+                    ctx.fillText( bottomLine, canvas.width/2, canvas.height - 20 );
                 }
             }
 
