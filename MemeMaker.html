@@ -75,8 +75,7 @@
                 window.open( document.querySelector( 'canvas' ).toDataURL() );
             }
             
-            function isValidFile(data)
-            {
+            function isValidFile(data) {
             	var mimeType = getMimeType(data);
             	var allowedMimeTypes = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
             	if(allowedMimeTypes.indexOf(mimeType) > -1) 
@@ -84,8 +83,8 @@
             	return 0;
             }
             
-            function getMimeType(data)
-            {
+            //All data uris are of form - data:mimetype;encoding,data
+            function getMimeType(data) {
             	var dataUriContent = data.split(":")[1];
             	var mimeType = dataUriContent.split(";")[0];
             	return mimeType;
@@ -106,14 +105,13 @@
                     }
 
                     // Set image data to background image if it is a valid image (jpg/gif/png)
-                    if(isValidFile(data))
+                    if(isValidFile(data)) {
                     	image.src = data;
-                    else	
-                    {
+                    }
+                    else {
                     	alert("Only jpg, png and gif images are allowed");
                     	evt.target.value = "";
                     }
-                    //console.log( fileObject.target.result );
                 };
                 reader.readAsDataURL( file );
             }
